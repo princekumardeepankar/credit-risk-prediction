@@ -1,4 +1,5 @@
-Project Description: Credit Risk Prediction Model
+Credit Risk Prediction Model
+
 This project aims to develop a robust credit risk prediction model capable of classifying loan applicants as either 'good' or 'bad' risk. The primary goal is to assist financial institutions in making informed lending decisions, thereby minimizing potential losses due to loan defaults.
 
 Dataset
@@ -12,6 +13,8 @@ Pandas: Utilized for efficient data manipulation, cleaning, and preprocessing of
 Scikit-learn: Employed for building and evaluating various machine learning models, including Decision Trees, Random Forests, and Extra Trees Classifiers, to identify the best-performing algorithm for credit risk prediction.
 Flask: Used to develop a lightweight web API, enabling the deployment of the trained machine learning model for real-time predictions.
 ngrok: For securely exposing the local Flask API server to the internet, facilitating testing and demonstration of the prediction service.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Repository Structure
 credit_risk_predictor/
