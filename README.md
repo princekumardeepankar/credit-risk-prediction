@@ -113,34 +113,6 @@ ngrok http 5000
 ```
 ngrok will provide a public URL (e.g., `https://<random_subdomain>.ngrok-free.app`). Keep this URL handy, as you'll use it to send prediction requests.
 
-### 3. Make a Prediction Request
-You can send a POST request to the `/predict` endpoint of your ngrok URL. The request body should be a JSON object containing the applicant's features. Below is an example using `curl`:
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d 
-'{
-    "Age": 22,
-    "Sex": "female",
-    "Job": 2,
-    "Housing": "own",
-    "Saving accounts": "little",
-    "Checking account": "moderate",
-    "Credit amount": 5951,
-    "Duration": 48
-}' 
-<YOUR_NGROK_URL>/predict
-```
-
-**Explanation of the JSON payload fields:**
-
-*   **`Age`**: Integer, applicant's age.
-*   **`Sex`**: String, 'male' or 'female'.
-*   **`Job`**: Integer, job classification (e.g., 0=unemployed, 1=unskilled resident, 2=skilled employee/official, 3=management/self-employed/highly qualified employee).
-*   **`Housing`**: String, 'free', 'own', or 'rent'.
-*   **`Saving accounts`**: String, 'little', 'moderate', 'quite rich', or 'rich'.
-*   **`Checking account`**: String, 'little', 'moderate', or 'rich'.
-*   **`Credit amount`**: Integer, the amount of credit requested.
-*   **`Duration`**: Integer, duration of the credit in months.
 
 ### 4. Interpret the API Response
 
@@ -184,14 +156,5 @@ The performance of the evaluated models on the test set (accuracy) is as follows
 *   **Decision Tree Classifier**: 0.5810
 
 
-## Future Improvements
 
-This project provides a solid foundation for credit risk prediction, but there are several avenues for future enhancements:
-
-*   **Advanced Feature Engineering**: Explore more sophisticated feature engineering techniques, such as creating interaction terms or polynomial features, to potentially capture more complex relationships in the data.
-*   **Explore Other Models**: Evaluate other machine learning models like Support Vector Machines (SVMs), Neural Networks, or advanced boosting techniques (e.g., LightGBM, CatBoost) that might offer better performance.
-*   **Hyperparameter Optimization**: Conduct more extensive hyperparameter tuning using advanced techniques (e.g., Bayesian Optimization) to potentially squeeze out more performance from existing models.
-*   **Data Augmentation**: Investigate techniques to balance the dataset further, especially for the minority class, which could improve model generalization.
-*   **Interpretability and Explainability**: Implement tools like SHAP (SHapley Additive exPlanations) or LIME (Local Interpretable Model-agnostic Explanations) to provide insights into why the model makes certain predictions, which is crucial for financial applications.
-*   **Real-time Monitoring**: Develop a system for monitoring model performance in production to detect data drift or model decay and retrain when necessary.
 
